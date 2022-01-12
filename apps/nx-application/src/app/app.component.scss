@@ -2,15 +2,23 @@
   @apply font-bold py-2 px-4 rounded;
 }
 .btn-blue {
-  @apply bg-blue-500 text-white;
+  @apply bg-blue-700 text-white;
 }
 .btn-blue:hover {
-  @apply bg-blue-700;
+  @apply bg-blue-600;
+}
+.btn-white {
+  @apply bg-white text-black;
+}
+.btn-white:hover {
+  @apply bg-slate-400;
 }
 .menu {
   src: 'https://img.icons8.com/ios/50/000000/menu.png';
   background-color: gray;
 }
 .textstyle {
-  text: blue -700px;
+  font-size: large;
+  font-weight: 600;
+  color: blue;
 }
