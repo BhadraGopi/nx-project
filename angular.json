@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "projects": {
+    "nx-application": {
+      "projectType": "application",
+      "root": "apps/nx-application",
+      "sourceRoot": "apps/nx-application/src",
+      "prefix": "nx-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/nx-application",
+            "index": "apps/nx-application/src/index.html",
+            "main": "apps/nx-application/src/main.ts",
+            "polyfills": "apps/nx-application/src/polyfills.ts",
+            "tsConfig": "apps/nx-application/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/nx-application/src/favicon.ico",
+              "apps/nx-application/src/assets"
+            ],
+            "styles": ["apps/nx-application/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/nx-application/src/environments/environment.ts",
+                  "with": "apps/nx-application/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "nx-application:build:production"
+            },
+            "development": {
+              "browserTarget": "nx-application:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "nx-application:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/nx-application/src/**/*.ts",
+              "apps/nx-application/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/nx-application"],
+          "options": {
+            "jestConfig": "apps/nx-application/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "nx-application-e2e": {
+      "root": "apps/nx-application-e2e",
+      "sourceRoot": "apps/nx-application-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/nx-application-e2e/cypress.json",
+            "devServerTarget": "nx-application:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "nx-application:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/nx-application-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["nx-application"]
+    }
+  }
+}
