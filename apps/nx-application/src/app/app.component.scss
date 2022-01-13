@@ -5,7 +5,7 @@
   @apply rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden;
 }
 .head {
-  @apply px-5 pt-4 flex items-center justify-between flex-row;
+  @apply px-5  flex items-center justify-between flex-row;
 }
 .d {
   @apply max-h-1;
@@ -64,4 +64,7 @@
 }
 .menuItem {
   @apply block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50;
+}
+.menuItemdiv {
+  @apply px-2 pt-2 pb-3 space-y-1;
 }
