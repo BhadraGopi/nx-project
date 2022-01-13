@@ -1,54 +1,71 @@
-<div class="relative bg-white overflow-hidden">
-  <div class="max-auto max-w-7xl flex-1">
-    <div class="justify-between sm:pb-16">
-      <div
-        class="relative z-10 pb-8 fl sm:pb-2 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
-      >
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+<div
+  class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+>
+  <div
+    class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden"
+  >
+    <div class="px-5 pt-4 flex items-center justify-between flex-wrap">
+      <div>
+        <img
+          class="h-1 w-1"
+          src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+          alt=""
         />
-        <i class="glyphicon glyphicon-user bg-blue-800"></i>
+      </div>
+      <div class="-mr-2">
         <button
-          class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+          type="button"
+          class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
         >
+          <span class="sr-only">Close main menu</span>
           <svg
-            class="h-8 w-8 text-black"
+            class="h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M4 6h16M4 10h16M4 14h16M4 18h16"
+              d="M6 18L18 6M6 6l12 12"
             />
           </svg>
         </button>
       </div>
-      <div>
-        <p class="text-black font-bold">Data to enrich your</p>
-        <p class="textstyle">online business</p>
-      </div>
-      <div>
-        <p>
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
-          aliqua.
-        </p>
-      </div>
-      <div class="flex-wrap">
-        <button class="btn btn-blue hover object-contain">Get started</button>
-
-        <button class="btn btn-white hover object-contain">Live Demo</button>
-      </div>
-      <div>
-        <img
-          src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
-          alt="An image"
-        />
-      </div>
     </div>
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+        >Product</a
+      >
+
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+        >Features</a
+      >
+
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+        >Marketplace</a
+      >
+
+      <a
+        href="#"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+        >Company</a
+      >
+    </div>
+    <a
+      href="#"
+      class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
+    >
+      Log in
+    </a>
   </div>
 </div>
