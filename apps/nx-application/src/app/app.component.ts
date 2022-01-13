@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nx-application';
-  isShow = false;
+  isShow = true;
   showMenu(): void {
     this.isShow = !this.isShow;
   }

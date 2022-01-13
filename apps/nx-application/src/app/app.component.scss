@@ -1,20 +1,14 @@
-.btn {
-  @apply font-bold py-2 px-4 rounded;
+.Mdiv1 {
+  @apply absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden;
 }
-.btn-blue {
-  @apply bg-blue-700 text-white;
-}
-.btn-blue:hover {
-  @apply bg-blue-600;
-}
-.btn-white {
-  @apply bg-white text-black;
-}
-.btn-white:hover {
-  @apply bg-slate-400;
+.Mdiv2 {
+  @apply rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden;
 }
 .head {
   @apply px-5 pt-4 flex items-center justify-between flex-row;
+}
+.d {
+  @apply max-h-1;
 }
 .menubtn {
   @apply bg-black rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500;
