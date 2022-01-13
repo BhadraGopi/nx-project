@@ -13,7 +13,7 @@
         />
       </div>
       <div>
-        <button type="button" class="menubtn">
+        <button (click)="showMenu()" type="button" class="menubtn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -30,38 +30,17 @@
         </button>
       </div>
     </div>
-    <div>
+    <div [hidden]="isShow">
       <div class="px-2 pt-2 pb-3 space-y-1">
-        <a
-          href="#"
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-          >Product</a
-        >
+        <a href="#" class="menuItem">Product</a>
 
-        <a
-          href="#"
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-          >Features</a
-        >
+        <a href="#" class="menuItem">Features</a>
 
-        <a
-          href="#"
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-          >Marketplace</a
-        >
+        <a href="#" class="menuItem">Marketplace</a>
 
-        <a
-          href="#"
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-          >Company</a
-        >
+        <a href="#" class="menuItem">Company</a>
       </div>
-      <a
-        href="#"
-        class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
-      >
-        Log in
-      </a>
+      <a href="#" class="menuItem"> Log in </a>
     </div>
   </div>
 </div>
@@ -86,7 +65,7 @@
   </div>
 </main>
 
-<div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+<div class="imgdiv">
   <img
     class="imgStyle"
     src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
