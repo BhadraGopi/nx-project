@@ -16,7 +16,7 @@ export class SimpleSwitchMapComponent implements OnInit {
     timer(0, 5000)
       .pipe(
         switchMap(
-          (_) => interval(2000),
+          () => interval(2000),
           (outerValue, innerValue, outerIndex, innerIndex) => ({
             outerValue,
             innerValue,
