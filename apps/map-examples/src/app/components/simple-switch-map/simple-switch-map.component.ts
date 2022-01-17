@@ -43,23 +43,18 @@ export class SimpleSwitchMapComponent implements OnInit {
       .subscribe((ret) => {
         console.log('Recd ' + ret);
       });
-    const srcObservableC = of(1, 2, 3, 4);
-    const innerObservableC = of('A', 'B', 'C', 'D');
 
-    srcObservableC
+    srcObservable
       .pipe(
         concatMap((val) => {
           console.log('Source value ' + val);
           console.log('starting new observable');
-          return innerObservableC;
+          return innerObservable;
         })
       )
       .subscribe((ret) => {
         console.log('Recd Concat ' + ret);
       });
-
-    const srcObservableM = of(1, 2, 3, 4);
-    const innerObservableM = of('A', 'B', 'C', 'D');
 
     srcObservable
       .pipe(
