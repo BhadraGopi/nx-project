@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { timer, interval } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
 @Component({
   selector: 'nx-project-simple-switch-map',
   templateUrl: './simple-switch-map.component.html',
@@ -26,5 +27,20 @@ export class SimpleSwitchMapComponent implements OnInit {
         )
       )
       .subscribe(console.log);
+
+    const srcObservable = of(1, 2, 3, 4);
+    const innerObservable = of('A', 'B', 'C', 'D');
+
+    srcObservable
+      .pipe(
+        switchMap((val) => {
+          console.log('Source value ' + val);
+          console.log('starting new observable');
+          return innerObservable;
+        })
+      )
+      .subscribe((ret) => {
+        console.log('Recd ' + ret);
+      });
   }
 }
