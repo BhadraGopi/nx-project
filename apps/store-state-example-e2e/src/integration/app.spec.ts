@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('login-auth-store', () => {
+describe('store-state-example', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('login-auth-store', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome login-auth-store');
+    getGreeting().contains('Welcome store-state-example');
   });
 });
