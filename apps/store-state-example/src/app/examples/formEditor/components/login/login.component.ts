@@ -17,7 +17,7 @@ import { AuthService } from '../../../auth/state/auth.service';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  email: any;
+
   constructor(
     private fb: FormBuilder,
     private auth: AuthService,
@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
   }
   LogUser() {
     const val = this.form.value;
-
     this.auth
       .login(val.email, val.password)
       .pipe(

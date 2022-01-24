@@ -10,9 +10,7 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(AuthActions.login),
-        tap((action) =>
-          localStorage.setItem('user', JSON.stringify(action.user))
-        )
+        tap((action) => console.log(action))
       ),
     { dispatch: false }
   );
