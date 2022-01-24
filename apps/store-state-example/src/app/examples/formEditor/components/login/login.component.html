@@ -1,0 +1,13 @@
+<div>
+  <h3>Log In</h3>
+  <form [formGroup]="form">
+    <div>
+      <input type="text" placeholder="email" formControlName="email" />
+    </div>
+    <div>
+      <input type="text" placeholder="password" formControlName="password" />
+    </div>
+    <button (click)="LogUser()" [disabled]="!form.valid">Log IN</button>
+  </form>
+  <p></p>
+</div>
