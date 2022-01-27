@@ -15,6 +15,9 @@ import { metaReducers, reducers } from './reducers';
 import { AuthModule } from './examples/auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { HomeComponent } from './examples/formEditor/components/home/home.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -26,16 +29,25 @@ const routes: Routes = [
     path: 'counter',
     component: MyCounterComponent,
   },
+  {
+    path: 'home/:user',
+    component: HomeComponent,
+  },
 ];
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent, MyCounterComponent],
+  declarations: [
+    AppComponent,
+    NxWelcomeComponent,
+    MyCounterComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
     AuthModule.forRoot(),
-
+    RouterModule.forRoot(routes),
     ReactiveFormsModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
@@ -46,6 +58,7 @@ const routes: Routes = [
         strictStateSerializability: true,
       },
     }),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

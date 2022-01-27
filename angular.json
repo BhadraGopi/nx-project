@@ -245,6 +245,128 @@
       "tags": [],
       "implicitDependencies": ["map-examples"]
     },
+    "ngrx-data-example": {
+      "projectType": "application",
+      "root": "apps/ngrx-data-example",
+      "sourceRoot": "apps/ngrx-data-example/src",
+      "prefix": "nx-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/ngrx-data-example",
+            "index": "apps/ngrx-data-example/src/index.html",
+            "main": "apps/ngrx-data-example/src/main.ts",
+            "polyfills": "apps/ngrx-data-example/src/polyfills.ts",
+            "tsConfig": "apps/ngrx-data-example/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/ngrx-data-example/src/favicon.ico",
+              "apps/ngrx-data-example/src/assets"
+            ],
+            "styles": ["apps/ngrx-data-example/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/ngrx-data-example/src/environments/environment.ts",
+                  "with": "apps/ngrx-data-example/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ngrx-data-example:build:production"
+            },
+            "development": {
+              "browserTarget": "ngrx-data-example:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngrx-data-example:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/ngrx-data-example/src/**/*.ts",
+              "apps/ngrx-data-example/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/ngrx-data-example"],
+          "options": {
+            "jestConfig": "apps/ngrx-data-example/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "ngrx-data-example-e2e": {
+      "root": "apps/ngrx-data-example-e2e",
+      "sourceRoot": "apps/ngrx-data-example-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ngrx-data-example-e2e/cypress.json",
+            "devServerTarget": "ngrx-data-example:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngrx-data-example:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/ngrx-data-example-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["ngrx-data-example"]
+    },
     "nx-application": {
       "projectType": "application",
       "root": "apps/nx-application",
@@ -366,6 +488,128 @@
       },
       "tags": [],
       "implicitDependencies": ["nx-application"]
+    },
+    "router-store-selectors": {
+      "projectType": "application",
+      "root": "apps/router-store-selectors",
+      "sourceRoot": "apps/router-store-selectors/src",
+      "prefix": "nx-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/router-store-selectors",
+            "index": "apps/router-store-selectors/src/index.html",
+            "main": "apps/router-store-selectors/src/main.ts",
+            "polyfills": "apps/router-store-selectors/src/polyfills.ts",
+            "tsConfig": "apps/router-store-selectors/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/router-store-selectors/src/favicon.ico",
+              "apps/router-store-selectors/src/assets"
+            ],
+            "styles": ["apps/router-store-selectors/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/router-store-selectors/src/environments/environment.ts",
+                  "with": "apps/router-store-selectors/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "router-store-selectors:build:production"
+            },
+            "development": {
+              "browserTarget": "router-store-selectors:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "router-store-selectors:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/router-store-selectors/src/**/*.ts",
+              "apps/router-store-selectors/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/router-store-selectors"],
+          "options": {
+            "jestConfig": "apps/router-store-selectors/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "router-store-selectors-e2e": {
+      "root": "apps/router-store-selectors-e2e",
+      "sourceRoot": "apps/router-store-selectors-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/router-store-selectors-e2e/cypress.json",
+            "devServerTarget": "router-store-selectors:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "router-store-selectors:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/router-store-selectors-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["router-store-selectors"]
     },
     "store-state-example": {
       "projectType": "application",
