@@ -1,6 +1,128 @@
 {
   "version": 1,
   "projects": {
+    "aux-routing-example": {
+      "projectType": "application",
+      "root": "apps/aux-routing-example",
+      "sourceRoot": "apps/aux-routing-example/src",
+      "prefix": "nx-project",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/aux-routing-example",
+            "index": "apps/aux-routing-example/src/index.html",
+            "main": "apps/aux-routing-example/src/main.ts",
+            "polyfills": "apps/aux-routing-example/src/polyfills.ts",
+            "tsConfig": "apps/aux-routing-example/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/aux-routing-example/src/favicon.ico",
+              "apps/aux-routing-example/src/assets"
+            ],
+            "styles": ["apps/aux-routing-example/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/aux-routing-example/src/environments/environment.ts",
+                  "with": "apps/aux-routing-example/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "aux-routing-example:build:production"
+            },
+            "development": {
+              "browserTarget": "aux-routing-example:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "aux-routing-example:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/aux-routing-example/src/**/*.ts",
+              "apps/aux-routing-example/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/aux-routing-example"],
+          "options": {
+            "jestConfig": "apps/aux-routing-example/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "aux-routing-example-e2e": {
+      "root": "apps/aux-routing-example-e2e",
+      "sourceRoot": "apps/aux-routing-example-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/aux-routing-example-e2e/cypress.json",
+            "devServerTarget": "aux-routing-example:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "aux-routing-example:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/aux-routing-example-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["aux-routing-example"]
+    },
     "login-auth-store": {
       "projectType": "application",
       "root": "apps/login-auth-store",

@@ -12,13 +12,16 @@ import { HeroDataService } from './hero-data-service.service';
 import {MatSelectModule} from '@angular/material/select';
 import { InMemoryDataService } from './in-memory-data.service';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import {  MatFormFieldModule, MatLabel } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
+import { CommonModule } from '@angular/common';
+
+
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
-    BrowserModule,
+    CommonModule,
     NgModule,
     ReactiveFormsModule,
     FormsModule,
