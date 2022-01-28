@@ -14,7 +14,9 @@ const routes: Routes = [
   { path: 'component-one', component: ComponentOneComponent },
   { path: 'component-two', component: ComponenttwoComponent },
   { path: 'component-aux', component: ComponentAuxComponent, outlet: 'sidebar' },
-
+{
+  path:'home',component:AppComponent
+}
 ];
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent, 

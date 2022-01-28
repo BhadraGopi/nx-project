@@ -4,7 +4,7 @@
     </div>
 	<a [routerLink]="['/component-two']">Component Two</a>
     <div>
-        <a [routerLink]="[{ outlets: {'sidebar': ['component-aux'] } }]">Component Aux</a>
+        <a [routerLink]="[{outlets: {'sidebar': ['component-aux'] } }]">Component Sidebar</a>
     </div>
 	
     <a [routerLink]="['',{outlets:{sidebar:null}}]">close sidebar</a>
