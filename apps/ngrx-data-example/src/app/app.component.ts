@@ -4,12 +4,16 @@ import { Observable } from 'rxjs';
 import { HeroDataService } from './hero-data-service.service';
 import { Hero } from './Hero.model';
 import { HeroService } from './hero.service';
-
+interface Website {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'nx-project-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
+
 export class AppComponent implements OnInit {
   title = 'ngrx-data-example';
   loading$!: Observable<boolean>;
@@ -26,6 +30,11 @@ export class AppComponent implements OnInit {
       Id: [],
     });
   }
+  websites: Website[] = [
+    {value: '1', viewValue: 'ItSolutionStuff.com'},
+    {value: '2', viewValue: 'HDTuto.com'},
+    {value: '3', viewValue: 'Nicesnippets.com'}
+  ];
 
   ngOnInit(): void {
     this.allHeroes$ = this.heroService.entities$;

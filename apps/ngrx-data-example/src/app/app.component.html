@@ -1,15 +1,17 @@
 <h1>ngrx/Data Example</h1>
-<form [formGroup]="form" (ngSubmit)="btnClick()">
-  <div>
-    <input
-      type="text"
-      [formControlName]="'Heroname'"
-      placeholder="Enter Hero name"
-    />
-  </div>
 
   <div>
     <button type="submit">Find</button>
   </div>
-</form>
-<div></div>
+
+<div>
+  <h4>Angular Basic mat-select Example</h4>
+  <mat-form-field>
+    <mat-label>Select Website</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let website of websites" [value]="website.value">
+        {{website.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

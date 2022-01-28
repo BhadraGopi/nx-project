@@ -19,7 +19,7 @@ export class HeroDataService extends DefaultDataService<Hero> {
   }
   override getAll(): Observable<Hero[]> {
     console.log('reached here');
-    return this.http.get(this.heroesUrl).pipe(
+    return this.http.get('api/heroes009').pipe(
       map((data: any) => {
         const heroes: Hero[] = [];
 
